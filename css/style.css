@@ -1,0 +1,59 @@
+body{
+    background: rgb(173, 244, 235);
+    color: rgb(16, 0, 0);
+    line-height: 1.6;;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.header-content{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    margin-bottom: 20px;
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+nav a:hover {
+    color: gold;
+}
+h1,h2, h3{
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    width:fit-content;
+    font-size: 2rem;
+    border-bottom: 2px solid rgb(0, 0, 0);
+}
+.about-info img{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.about-info, 
+.projects-info,
+.skills-info,
+.education-info,  
+.experience-info, 
+.contact-form, 
+.contact-info{
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 6px 12px black;
+    margin-bottom: 2rem;
+}
