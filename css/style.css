@@ -1,59 +1,353 @@
-body{
-    background: rgb(173, 244, 235);
-    color: rgb(16, 0, 0);
-    line-height: 1.6;;
-    font-family: 'Poppins', sans-serif;
+:root {
+    --background: #adf4eb;
+    --surface: #ffffff;
+    --text: #18212b;
+    --primary: #075985;
+    --primary-dark: #064e73;
+    --border: #cbd5e1;
+    --shadow: 0 6px 18px rgba(15, 23, 42, 0.15);
 }
-header{
-    background-color: rgb(0, 0, 0);
-    color: white;
+
+* {
+    box-sizing: border-box;
 }
-.header-content{
-    color: white;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    background: #0f172a;
+    color: #ffffff;
+}
+
+.header-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: 25px;
-    margin-bottom: 20px;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 1.5rem;
 }
-nav ul{
-    list-style: none;
+
+.brand {
     display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.brand img {
+    width: 56px;
+    height: 56px;
+    object-fit: contain;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    color: var(--primary-dark);
+    font-size: 1.8rem;
+    border-bottom: 2px solid currentColor;
+    width: fit-content;
+}
+
+h3 {
+    color: var(--primary-dark);
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
     margin: 0;
     padding: 0;
-    gap: 2rem;
 }
-nav a{
-    color: white;
+
+nav a {
+    color: #ffffff;
+    font-weight: bold;
     text-decoration: none;
-    font-weight: bold;
 }
-nav a:hover {
-    color: gold;
+
+nav a:hover,
+nav a:focus-visible {
+    color: #facc15;
 }
-h1,h2, h3{
-    color: rgb(0, 0, 0);
-    font-weight: bold;
-    width:fit-content;
-    font-size: 2rem;
-    border-bottom: 2px solid rgb(0, 0, 0);
+
+.search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
-.about-info img{
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    margin-right: 20px;
+
+.search-form label {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
 }
-.about-info, 
+
+main {
+    width: min(1200px, calc(100% - 2rem));
+    margin: 2rem auto;
+}
+
+section {
+    scroll-margin-top: 1rem;
+}
+
+.about-info,
 .projects-info,
 .skills-info,
-.education-info,  
-.experience-info, 
-.contact-form, 
-.contact-info{
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 6px 12px black;
+.education-info,
+.contact-form,
+.contact-info {
+    padding: clamp(1.25rem, 3vw, 2rem);
     margin-bottom: 2rem;
+    background: var(--surface);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.about-container > div {
+    max-width: 70ch;
+}
+
+.about-container img {
+    width: 200px;
+    height: 200px;
+    flex: 0 0 auto;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: var(--shadow);
+}
+
+dl {
+    display: grid;
+    grid-template-columns: minmax(10rem, 0.8fr) 1.2fr;
+    gap: 0.75rem 1.5rem;
+}
+
+dt {
+    color: var(--primary-dark);
+    font-weight: bold;
+}
+
+dd {
+    margin: 0;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+article {
+    padding: 1.25rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+article:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow);
+}
+
+a {
+    color: var(--primary);
+}
+
+a:hover,
+a:focus-visible {
+    color: var(--primary-dark);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    min-width: 620px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    text-align: left;
+}
+
+th {
+    background: #e0f2fe;
+}
+
+#mycontacts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+#mycontacts > div {
+    margin-bottom: 0;
+}
+
+.contact-form form {
+    display: grid;
+    gap: 0.5rem;
+}
+
+input,
+textarea,
+button {
+    font: inherit;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button {
+    width: fit-content;
+    padding: 0.7rem 1.25rem;
+    border: 0;
+    border-radius: 5px;
+    background: var(--primary);
+    color: #ffffff;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus-visible {
+    background: var(--primary-dark);
+}
+
+.social-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.social-links img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+footer {
+    padding: 1.5rem;
+    background: #0f172a;
+    color: #ffffff;
+    text-align: center;
+}
+
+footer p {
+    margin: 0.25rem;
+}
+
+@media (max-width: 850px) {
+    .header-content {
+        flex-wrap: wrap;
+    }
+
+    nav {
+        order: 3;
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .header-content {
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .brand {
+        width: 100%;
+    }
+
+    .search-form {
+        width: 100%;
+    }
+
+    .search-form input {
+        flex: 1;
+    }
+
+    nav ul {
+        justify-content: space-between;
+        gap: 0.5rem;
+    }
+
+    .about-container,
+    #mycontacts {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .about-container img {
+        align-self: center;
+        width: 160px;
+        height: 160px;
+    }
+
+    dl {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+    }
+
+    dd {
+        margin-bottom: 0.75rem;
+    }
 }
