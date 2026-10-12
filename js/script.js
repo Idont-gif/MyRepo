@@ -24,8 +24,12 @@ class ImageSlider {
         this.startAutoplay();
     }
     bindEvents() {
-        this.previousButton?.addEventListener('click', () => this.previousSlide());
-        this.nextButton?.addEventListener('click', () => this.nextSlide());
+        if (this.previousButton) {
+            this.previousButton.addEventListener('click', () => this.previousSlide());
+        }
+        if (this.nextButton) {
+            this.nextButton.addEventListener('click', () => this.nextSlide());
+        }
         this.slider.addEventListener('mouseenter', () => this.stopAutoplay());
         this.slider.addEventListener('mouseleave', () => this.startAutoplay());
     }
@@ -75,5 +79,5 @@ class ImageSlider {
         this.autoplayId = null;
     }
 }
-document.addEventListener('DOMContentLoaded', () => { new ImageSlider('.slider');}
-);
+
+new ImageSlider('.slider');
