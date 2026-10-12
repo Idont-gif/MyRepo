@@ -87,7 +87,8 @@ main {
 .projects-info,
 .education-info,
 .contact-form,
-.contact-info {
+.contact-info,
+.slider-info {
     background: white;
     padding: 25px;
     margin-bottom: 30px;
@@ -270,7 +271,73 @@ footer p {
     .projects-info,
     .education-info,
     .contact-form,
-    .contact-info {
+    .contact-info,
+    .slider-info {
         padding: 18px;
     }
+
+.slider {
+    position: relative;
+    width: 100%;
+    max-width: 1600px;
+    height: 85vh;
+    min-height: 320px;
+    max-height: 900px;
+    margin: 30px auto 0;
+    overflow: hidden;
+    background: #111;
+}
+.slider-track {
+    display: flex;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+.slide {
+    flex: 0 0 100%;
+    height: 100%;
+}
+.slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.slider-btn.prev {
+    left: 10px;
+}
+.slider-btn.next {
+    right: 10px;
+}
+.slider-dots {
+    position: absolute;
+    bottom: 16px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+.dot{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    user-select: none;
+}
+.dot.active {
+    background-color: #333;
 }
