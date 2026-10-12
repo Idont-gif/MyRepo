@@ -79,5 +79,6 @@ class ImageSlider {
         this.autoplayId = null;
     }
 }
-
-new ImageSlider('.slider');
+document.addEventListener('DOMContentLoaded', () => {
+    new ImageSlider('.slider');
+});
